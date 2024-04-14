@@ -39,6 +39,3 @@ Twilio for communication APIs.
 MongoDB for database services.
 GoDaddy for hosting and domain services.
 Thank you for supporting MindBridge on our journey to enhance communication for autistic children globally.
-
-
-
