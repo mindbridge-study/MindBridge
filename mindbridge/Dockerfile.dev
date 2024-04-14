@@ -9,7 +9,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 # Install app dependencies
 COPY package.json ./
-COPY package-lock.json ./
 RUN npm install --silent
 
 # Expose port 3000 to access the server
