@@ -1,5 +1,5 @@
 # Start with the official Node.js base image to build the React app
-FROM node:16-alpine as build
+FROM node:lts-alpine3.19 as build
 
 # Set the working directory
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --slient
 
 # Copy the rest of your frontend app
 COPY . .
