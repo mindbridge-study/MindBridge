@@ -15,11 +15,10 @@ jobs:
         host: ${{ secrets.DIGITALOCEAN_IP }}
         username: root
         key: ${{ secrets.DIGITALOCEAN_SSH_KEY }}
-        port: 22
-        source: "."
-        target: "/root/MindBridge"
+
         script: |
           cd /root/MindBridge
+          git pull
           docker-compose down
           docker-compose up --build -d
 
