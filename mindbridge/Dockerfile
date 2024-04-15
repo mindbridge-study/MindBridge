@@ -7,11 +7,11 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package.json ./
 
-# Install dependencies
-RUN npm install --slient
-
 # Copy the rest of your frontend app
 COPY . .
+
+# Install dependencies
+RUN npm install --slient
 
 # Build the application
 RUN npm run build
