@@ -21,10 +21,10 @@ jobs:
     - name: Build and push Frontend Docker image
       uses: docker/build-push-action@v2
       with:
-        context: ./frontend
+        context: ./mindbridge
         file: ./mindbridge/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/frontend:latest
+        tags: ${{ secrets.DOCKER_HUB_USERNAME }}/mindbridge:latest
 
     - name: Build and push Backend Docker image
       uses: docker/build-push-action@v2
@@ -45,7 +45,7 @@ jobs:
         username: root
         key: ${{ secrets.DIGITALOCEAN_SSH_KEY }}
         script: |
-          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/frontend:latest
+          docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/mindbridge:latest
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/backend:latest
           docker-compose down
           docker-compose up -d
