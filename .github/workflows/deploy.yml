@@ -45,6 +45,7 @@ jobs:
         username: root
         key: ${{ secrets.DIGITALOCEAN_SSH_KEY }}
         script: |
+          cd /root/MindBridge
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/mindbridge:latest
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/backend:latest
           docker-compose down
