@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    build: ./backend
-    volumes:
-      - ./backend:/app
+    image: petersonguo/backend:latest  # Use the backend image from Docker Hub
     env_file:
       - ./backend/.env
     networks:
@@ -12,7 +10,7 @@ services:
     restart: unless-stopped
 
   frontend:
-    build: ./mindbridge
+    image: petersonguo/mindbridge:latest  # Use the frontend image from Docker Hub
     ports:
       - "80:80"
       - "443:443"

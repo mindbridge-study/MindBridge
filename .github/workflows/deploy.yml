@@ -50,4 +50,3 @@ jobs:
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/backend:latest
           docker-compose down
           docker-compose up -d
-          # Update your docker-compose.yml to use the images from Docker Hub
