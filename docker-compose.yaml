@@ -9,6 +9,7 @@ services:
       - ./backend/.env
     networks:
       - network
+    restart: unless-stopped
 
   frontend:
     build: ./mindbridge
@@ -17,6 +18,7 @@ services:
       - "443:443"
     networks:
       - network
+    restart: unless-stopped
 
 networks:
   network:

@@ -11,7 +11,7 @@ COPY package.json ./
 COPY . .
 
 # Install dependencies
-RUN npm install --slient --production --max-old-space-size=200
+RUN npm install --silent --production
 
 # Build the application
 RUN npm run build
